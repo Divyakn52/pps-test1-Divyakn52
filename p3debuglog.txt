@@ -1,4 +1,5 @@
-
+ 
+ gcc -g p3original.c
  ./a.out
 enter the two numbers
 20
@@ -29,24 +30,41 @@ warning: Error disabling address space randomization: Operation not permitted
 Breakpoint 1, main () at p3original.c:16
 16  {
 (gdb) n
-18    input(&x,&y);
+18    input(&x,&y); //pass by reference
+(gdb) s
+input (a=0x7ffde220b26c, b=0x7ffde220b270) at p3original.c:4
+4     printf("enter the two numbers\n");
 (gdb) n
 enter the two numbers
+5     scanf("%d %d", a, b);
+(gdb) n
 20
 30
-19    add(x,y,&ans);
+6   }
 (gdb) n
-20    output(x,y,ans);
+main () at p3original.c:19
+19    add(x,y,&ans); //pass by value(a,b) and reference (sum)
 (gdb) s
-output (a=20, b=30, sum=50) at p3original.c:13
-13    printf("%d+%d=%d\n",a,b,sum);
+add (a=20, b=30, sum=0x7ffde220b274) at p3original.c:9
+9     *sum=a+b;
+(gdb) n
+10  }
+(gdb) n
+main () at p3original.c:20
+20    output(x,y,ans); // pass by value
+(gdb) p x
+$1 = 20
+(gdb) p y
+$2 = 30
+(gdb) p ans
+$3 = 50
 (gdb) n
 20+30=50
-14  }
+21  return 0;
 (gdb) q
 A debugging session is active.
 
-    Inferior 1 [process 108] will be killed.
+    Inferior 1 [process 293] will be killed.
 
 Quit anyway? (y or n) y
  
