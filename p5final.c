@@ -36,3 +36,4 @@ int main()
   cmp(x,y,z,&large);
   printf("%d is the largest of them all\n",large);return 0;
 }
+
