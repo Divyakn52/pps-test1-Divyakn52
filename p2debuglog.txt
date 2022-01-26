@@ -1,4 +1,4 @@
- 
+n 
  gcc -g p2original.c
  ./a.out
 enter the numbers 
