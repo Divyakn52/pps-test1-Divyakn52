@@ -1,30 +1,15 @@
 #include<stdio.h>
-int input()
+int main()
 {
-  int x;
-  scanf("%d",&x);
-  return x;
+  int i, n, sum=0;
+
+  printf("\n enter a number\n");
+  scanf("%d" , &n);    //5
+
+  for(i=0;i<n; i++)     //i=5
+    {
+      sum=sum + i;
+    }
+  printf("/n sum ofn=%d\n",sum);
+  return 0;  
 }
-int sum_n(int n)
-{
-  int r=0;
-  r=(n*(n+1))/2;
-  return r;
-}
-void output(int n,int sum)
-{
-  printf("1");
-  for(int f=2;f<n;f=f+1)
-  {
-    printf("+%d",f);
-  }
-  printf("+%d is %d\n",n,sum);
-}
-  int main()
-  {
-    int n,sum;
-    n=input();
-    sum=sum_n(n);
-    output(n,sum);
-    return 0;
-  }
