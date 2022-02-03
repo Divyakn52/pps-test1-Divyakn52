@@ -1,10 +1,10 @@
 #include<stdio.h>
-void input(int *a, int *b) //function reference
+void input(int *a,int *b)
 {
-  printf("enter the two numbers\n");
-  scanf("%d %d", a, b);
+  printf("enter two numbers\n");
+  scanf("%d %d",a,b);
 }
-void add(int a,int b,int *sum) //function definition
+void add(int a,int b,int *sum)
 {
   *sum=a+b;
 }
@@ -15,8 +15,8 @@ void output(int a,int b,int sum)
 int main()
 {
   int x,y,ans;
-  input(&x,&y); //pass by reference
-  add(x,y,&ans); //pass by value(a,b) and reference (sum)
-  output(x,y,ans); // pass by value
-return 0;
+  input(&x,&y);
+  add(x,y,&ans);
+  output(x,y,ans);
+  return 0;
 }
