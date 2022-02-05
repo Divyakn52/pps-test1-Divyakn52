@@ -6,10 +6,11 @@ int input()
   return x;
 }
 int sum_n(int n)
-{
-  int r=0;
-  r=(n*(n+1))/2;
-  return r;
+{ 
+  int i,sum=0;
+  for(i=0;n>=0;i++)
+  sum=sum+i;
+  return sum;
 }
 void output(int n,int sum)
 {
